@@ -1,0 +1,19 @@
+function rerun_times() {
+    local number=$1
+    shift
+
+    for n in $(seq $number); do
+        $@;
+        [[ ! $? = 0 ]] && break;
+    done
+}
+
+function tnst () {
+    if [[ $# -eq 0 ]]; then
+        echo "You need to pass in a tmux session!"
+        exit 1
+    else
+        local tmux_session=$1
+        tmux new-session -t $tmux_session
+    fi
+}
