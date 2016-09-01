@@ -60,21 +60,13 @@
 # ---------------------------------------
   export MYBIN="$HOME/bin"
   export DOTBIN="$HOME/.meinekonfig/bin"
-  export GOPATH="$HOME/golang/gocode"
-  export GOROOT="$HOME/golang/go"
-  export GOBIN="$HOME/golang/bin"
+  export GOPATH="$HOME/src/golang/gocode"
+  export GOROOT="$HOME/src/golang/go"
+  export GOBIN="$HOME/src/golang/bin"
   export BIN="/usr/local/bin"
   export SBIN="/usr/local/sbin"
 
   export PATH=$MYBIN:$DOTBIN:$BIN:$SBIN:$GOROOT/bin:$GOPATH/bin:$GOBIN:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
-  if ! [[ -d $HOME/.nvm ]]; then
-    puts 'creating ~/.nvm directory'
-    mkdir ~/.nvim
-  fi
-
-  export NVM_DIR=~/.nvm
-  . $(brew --prefix nvm)/nvm.sh
 
 # ---------------------------------------
 # Environmental Variables
