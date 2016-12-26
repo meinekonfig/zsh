@@ -1,8 +1,9 @@
-function rerun_times() {
+function rerun_times () {
     local number=$1
     shift
 
     for n in $(seq $number); do
+        echo "running number $n"
         $@;
         [[ ! $? = 0 ]] && break;
     done
@@ -17,3 +18,14 @@ function tnst () {
         tmux new-session -t $tmux_session
     fi
 }
+
+function retagruby () {
+    ctags --recurse . `bundle show --paths` $RUBY_ROOT/lib/ruby/[0-9]* $RUBY_ROOT/lib/ruby/site_ruby/[0-9]* $RUBY_ROOT/lib/ruby/vendor_ruby/[0-9]* --exclude=.git,log,tmp,doc,coverage,pkg --languages=-javascript
+    ctags --recurse --append --languages=C,C++ $RUBY_ROOT/include
+}
+
+# remove dangling images
+# docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+
+# delete all docker containers
+# docker ps -q -a | xargs docker rm

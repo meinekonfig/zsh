@@ -79,3 +79,10 @@
 # ---------------------------------------
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# ---------------------------------------
+# Gruvbox Color
+# ---------------------------------------
+source "$HOME/.vim/bundle/colorscheme/gruvbox/gruvbox_256palette.sh"
+
+[[ -s "/Users/kgan/.gvm/scripts/gvm" ]] && source "/Users/kgan/.gvm/scripts/gvm"
