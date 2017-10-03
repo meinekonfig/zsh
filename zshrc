@@ -119,7 +119,7 @@ source "$HOME/.vim/bundle/colorscheme/gruvbox/gruvbox_256palette_osx.sh"
 BASE16_SHELL=$HOME/.meinekonfig/config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-export NVM_DIR="/Users/kgan/.nvm"
+export NVM_DIR="/Users/kareem/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 #
 # autoload -U add-zsh-hook
